@@ -33,6 +33,8 @@ body::-webkit-scrollbar-thumb
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #53535381;
 }
+
+
 ol, ul {
 	list-style: none;
 }
@@ -49,6 +51,7 @@ table {
 */
 html{
     font-size: 24px;
+    scroll-behavior: smooth;
 }
 body{
     background-color: black;
@@ -86,6 +89,8 @@ ul li{
 
 ul li a{
     transition: text-shadow 0.3s; 
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -155,13 +160,119 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
+
 .row img{
     margin: 1.5rem;
     scale: 1.125;
     border-radius: 0.5rem;
     transition: box-shadow 0.3s; 
+    cursor: pointer;
 }
 .row img:hover {
     box-shadow: 0 0 20px #0057FF;
 }
+
+.rowc{
+    display: flex;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.rowc img{
+    width: 10%;
+}
+.rowc img:hover {
+    filter:drop-shadow(0 0 20px #0057FF);
+    transition: filter 0.3s ease; 
+}
+
+
+
+
+
+
+.slider {
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border: 10px solid #000;
+    border-radius: 1rem;
+    margin: 2rem 0;
+ }
+ 
+ .middle {
+    position: relative;
+ }
+ 
+ .navigation {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+ }
+ 
+ .bar {
+    width: 30px;
+    height: 8px;
+    margin: 6px;
+    cursor: pointer;
+    background-color: #000;
+    opacity: .5;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+ }
+ 
+ .bar:hover {
+    opacity: 1;
+    transform:scale(1.1);
+ }
+ 
+ input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+ }
+ 
+ .slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+ }
+ 
+ .slide {
+    width: 25%;
+    transition: all 0.6s ease;
+ }
+ 
+ .img {
+    width: 100%;
+    height: 100%;
+ }
+ 
+ #r1:checked ~ .s1 {
+    margin-left: 0;
+ }
+ 
+ #r2:checked ~ .s1 {
+    margin-left: -25%;
+ }
+ 
+ #r3:checked ~ .s1 {
+    margin-left: -50%;
+ }
+ 
+ #r4:checked ~ .s1 {
+    margin-left: -75%;
+ }
+ 
+ .work{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+ }
+
+ .contacts{
+    margin-top: 4rem;
+ }
